@@ -14,12 +14,12 @@ notes.get('/', (req, res) =>
 
 
 // GET Route for a specific tip
-/**tips.get('/:tip_id', (req, res) => {
-  const tipId = req.params.tip_id;
-  readFromFile('./db/tips.json')
+notes.get('/:note_id', (req, res) => {
+  const noteId = req.params.note_id;
+  readFromFile('./db/db.json')
     .then((data) => JSON.parse(data))
     .then((json) => {
-      const result = json.filter((tip) => tip.tip_id === tipId);
+      const result = json.filter((note) => note.note_id === noteId);
       return result.length > 0
         ? res.json(result)
         : res.json('No tip with that ID');
@@ -27,7 +27,7 @@ notes.get('/', (req, res) =>
 });
 
 // DELETE Route for a specific tip
-tips.delete('/:tip_id', (req, res) => {
+/*tips.delete('/:tip_id', (req, res) => {
   const tipId = req.params.tip_id;
   readFromFile('./db/tips.json')
     .then((data) => JSON.parse(data))
@@ -53,7 +53,7 @@ notes.post('/', (req, res) => {
     const newNote = {
       title,
       text,
-      tip_id: uuidv4(),
+      id: uuidv4(),
     };
 
     readAndAppend(newNote, './db/db.json');
