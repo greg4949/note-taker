@@ -1,12 +1,7 @@
 [
     {
         "title": "Grocery List",
-        "text": "Broccoli\nCarrots\nRolls\nRibeye Steak",
-        "id": "4ec41719-b6a6-40dd-948e-3012ccae2fa1"
-    },
-    {
-        "title": "Lowe's List",
-        "text": "Hammer\nPaintbrush\nProtective Plastic",
-        "id": "8130acf2-14c5-4d27-8742-7b1e8a383ce0"
+        "text": "steak\npotatoes\nbroccoli",
+        "id": "1797359d-70d9-4f73-a1eb-9c1055d087cb"
     }
 ]
