@@ -42,13 +42,15 @@ const saveNote = (note) =>
     body: JSON.stringify(note),
   });
 
-const deleteNote = (id) =>
-  fetch(`/api/notes/${id}`, {
+const deleteNote = (id) =>{
+  return fetch(`/api/notes/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
     },
-  });
+    
+  })}
+  
 
 const renderActiveNote = () => {
   hide(saveNoteBtn);
@@ -72,8 +74,8 @@ const handleNoteSave = () => {
     text: noteText.value,
   };
   saveNote(newNote).then(() => {
-    getAndRenderNotes();
-    renderActiveNote();
+   getAndRenderNotes();
+   renderActiveNote();
   });
 };
 
@@ -91,8 +93,7 @@ const handleNoteDelete = (e) => {
 
   deleteNote(noteId).then(() => {
     getAndRenderNotes();
-    renderActiveNote();
-    
+    renderActiveNote();    
   });
 };
 
@@ -184,3 +185,4 @@ if (window.location.pathname === '/notes') {
 }
 
 getAndRenderNotes();
+
